@@ -848,7 +848,21 @@ void R_DrawSprite (vissprite_t* spr)
     fixed_t		scale;
     fixed_t		lowscale;
     int			silhouette;
-		
+
+    if (CRLOptionSet[CRL_SPRITE_CLIPPING].curvalue > 0)
+    {
+        for (x = spr->x1; x <= spr->x2; x++)
+        {
+            clipbot[x] = viewheight;
+            cliptop[x] = -1;
+        }
+
+        mfloorclip = clipbot;
+        mceilingclip = cliptop;
+        R_DrawVisSprite(spr, spr->x1, spr->x2);
+        return;
+    }
+
     for (x = spr->x1 ; x<=spr->x2 ; x++)
 	clipbot[x] = cliptop[x] = -2;
     
@@ -866,7 +880,7 @@ void R_DrawSprite (vissprite_t* spr)
 	    // does not cover sprite
 	    continue;
 	}
-			
+	
 	r1 = ds->x1 < spr->x1 ? spr->x1 : ds->x1;
 	r2 = ds->x2 > spr->x2 ? spr->x2 : ds->x2;
 

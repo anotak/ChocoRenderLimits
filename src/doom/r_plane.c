@@ -425,7 +425,10 @@ void R_DrawPlanes (void)
     int			stop;
     int			angle;
     int                 lumpnum;
-				
+	
+    CRL_InformDrawsegs(ds_p - drawsegs);
+    CRL_InformOpenings(lastopening - openings);
+
 #ifdef RANGECHECK
     if (ds_p - drawsegs > MAXDRAWSEGS)
 	I_Error ("R_DrawPlanes: drawsegs overflow (%i)",

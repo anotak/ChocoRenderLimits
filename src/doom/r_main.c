@@ -909,6 +909,7 @@ void R_RenderPlayerView (player_t* player)
 
 		// The head node is the last node output.
 		R_RenderBSPNode (numnodes-1);
+                CRL_InformSprites(vissprite_p - vissprites);
 		
 		// Check for new console commands.
 		NetUpdate ();

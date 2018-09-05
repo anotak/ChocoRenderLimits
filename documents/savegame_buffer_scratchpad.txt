@@ -1,0 +1,135 @@
+header:
+16
+24
+1
+1
+1
+4
+1
+1
+1
+
+= 6 + 4 + 16 + 24 = 10 + 16 + 24 = 26 + 24 = 50
+
+gets padded to 52
+(
+
+8
+
+
+((4
+4
+4
+4
+4
+4
+4
+4
+4) = 8 * 4
+
+6 * 4
+
+6 * 4
+
+
+4 * 4) = 24 * 4
+
+(4
+4
+
+4) = 3 * 4
+
+9 * 4
+
+4*4
+4*4
+
+
+
+
+(4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4) = 13*4
+
+2*4*4
+4
+)
+= 24 * 4 + 3 * 4 + 9 * 4 + 8*4 + 14*4 + (2*4*4) + 8
+= 29 * 4 + 9 * 4 + 8*4 + 14*4 + (2*4*4)
+= 38 * 4 + 8*4 + 14*4 + (2*4*4)
+= 46 * 4 + 14*4 + (2*4*4)
+= 60 * 4 + (2*4*4)
+= 68 * 4 from player
+then there are 4 players potentially
+68 * 4 * 4
+... + 52 from header
+
++ 7 * 2 * numsectors
++ (3 * 2) * numlines
++ (5 * 2) * numsides
++ 
+numthinkers *
+(
+	2 +
+	padding? (2)
+	+
+	(4 * 3 = 12)
+	+
+	(42 * 4 = 168)
+
+    + (5 * 2 = 10)
+)
+so numthinkers * 192
+
+numspecials *
+( CEILING CASE
+	13 * 4 
+)
+OR
+( DOOR CASE
+	11 * 4 
+)
+
+OR
+( FLOOR CASE
+	12 * 4 
+)
+OR
+( PLAT CASE
+	15 * 4 
+)
+OR
+( FLASH CASE
+	10 * 4 
+)
+OR
+( STROBE CASE
+	10 * 4 
+)
+OR
+( GLOW CASE
+	8 * 4 
+)
+
+
++ 1 for terminate specials
++ 1 for EOF
+
+of 180224 limit
+
+52 + 168 * players + 192 * numthinkers
+
+
+
+

@@ -69,6 +69,8 @@ enum
 	
 	/** Colorblindness. */
 	CRL_COLORBLIND,
+
+        CRL_SPRITE_CLIPPING,
 	
 	/** Number of options used. */
 	NUM_CRL_OPTIONS
@@ -209,6 +211,14 @@ enum
 	NUM_CRL_COLORBLIND
 };
 
+// sprite clipping options
+enum
+{
+    CRL_SPRITE_CLIPPING_REGULAR,
+    CRL_SPRITE_CLIPPING_NONE,
+    NUM_CRL_SPRITE_CLIPPING
+};
+
 /**
  * CRL Value.
  */
@@ -246,6 +256,14 @@ typedef struct CRL_Data_s
 	
 	/** Number of find planes. */
 	int numfindplanes;
+
+        int numdrawsegs;
+
+        int numopenings;
+
+        int numsprites;
+
+        int numsolidsegs;
 } CRL_Data_t;
 
 /**
@@ -345,6 +363,10 @@ void CRL_OutputReport(void);
 void CRL_SetColors(uint8_t* colors, void* ref);
 void CRL_ChangeFrame(int __err);
 void CRL_CountPlane(void* __key, int __chorf, int __id);
+void CRL_InformDrawsegs(int num);
+void CRL_InformOpenings(int num);
+void CRL_InformSprites(int num);
+void CRL_InformSolidsegs(int num);
 void CRL_StatDrawer(void (*__dt)(int, int, const char*),
 	int (*__wi)(const char*), int __fh, int __lh);
 void CRL_MarkPixelP(void** __surface, void* __what, void* __drawp);

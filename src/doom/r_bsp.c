@@ -35,6 +35,8 @@
 
 //#include "r_local.h"
 
+#include "crlcore.h"
+
 
 
 seg_t*		curline;
@@ -539,6 +541,7 @@ void R_Subsector (int num)
 	line++;
     }
 
+    CRL_InformSolidsegs(newend - solidsegs - 1);
     // check for solidsegs overflow - extremely unsatisfactory!
     if(newend > &solidsegs[32])
         I_Error("R_Subsector: solidsegs overflow (vanilla may crash here)\n");

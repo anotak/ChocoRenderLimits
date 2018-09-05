@@ -911,5 +911,8 @@
     <ClInclude Include="..\..\..\textscreen\txt_window_action.h">
       <Filter>Header Files\textscreen</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\crl_defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

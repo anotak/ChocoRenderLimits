@@ -292,6 +292,7 @@
     <ClInclude Include="..\..\..\pcsound\pcsound_internal.h" />
     <ClInclude Include="..\..\..\src\aes_prng.h" />
     <ClInclude Include="..\..\..\src\crlcore.h" />
+    <ClInclude Include="..\..\..\src\crl_defs.h" />
     <ClInclude Include="..\..\..\src\deh_defs.h" />
     <ClInclude Include="..\..\..\src\deh_io.h" />
     <ClInclude Include="..\..\..\src\deh_main.h" />

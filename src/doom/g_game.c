@@ -1693,6 +1693,101 @@ void G_DoSaveGame (void)
     // draw the pattern into the back screen
     R_FillBackScreen ();
 }
+
+int CRL_EstimateSaveSize()
+{
+    if (gamestate != GS_LEVEL)
+        return 0;
+
+    int count = 52;
+    
+    int mobj_count = 0;
+    int i = 0;
+    thinker_t*		th;
+
+    for (i = 0; i < MAXPLAYERS; i++)
+    {
+        if (!playeringame[i])
+            break;
+
+        count += 168;
+    }
+
+    count += 7 * 2 * numsectors;
+    count += 3 * 2 * numlines;
+    count += 5 * 2 * numsides;
+
+    for (th = thinkercap.next; th != &thinkercap; th = th->next)
+    {
+        if (th->function.acp1 == (actionf_p1)P_MobjThinker)
+        {
+            mobj_count++;
+        }
+    }
+    count += 160 * mobj_count;
+
+    for (th = thinkercap.next; th != &thinkercap; th = th->next)
+    {
+        if (th->function.acv == (actionf_v)NULL)
+        {
+            for (i = 0; i < MAXCEILINGS; i++)
+                if (activeceilings[i] == (ceiling_t *)th)
+                    break;
+
+            if (i<MAXCEILINGS)
+            {
+                count += 13 * 4;
+            }
+            continue;
+        }
+
+        if (th->function.acp1 == (actionf_p1)T_MoveCeiling)
+        {
+            count += 13 * 4;
+            continue;
+        }
+
+        if (th->function.acp1 == (actionf_p1)T_VerticalDoor)
+        {
+            count += 11 * 4;
+            continue;
+        }
+
+        if (th->function.acp1 == (actionf_p1)T_MoveFloor)
+        {
+            count += 12 * 4;
+            continue;
+        }
+
+        if (th->function.acp1 == (actionf_p1)T_PlatRaise)
+        {
+            count += 15 * 4;
+            continue;
+        }
+
+        if (th->function.acp1 == (actionf_p1)T_LightFlash)
+        {
+            count += 10 * 4;
+            continue;
+        }
+
+        if (th->function.acp1 == (actionf_p1)T_StrobeFlash)
+        {
+            count += 10 * 4;
+            continue;
+        }
+
+        if (th->function.acp1 == (actionf_p1)T_Glow)
+        {
+            count += 8 * 4;
+            continue;
+        }
+    }
+
+    count += 2;
+
+    return count;
+}
  
 
 //

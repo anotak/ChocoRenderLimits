@@ -24,7 +24,6 @@
 #include "d_event.h"
 #include "d_ticcmd.h"
 
-
 //
 // GAME
 //
@@ -47,6 +46,10 @@ void G_DoLoadGame (void);
 
 // Called by M_Responder.
 void G_SaveGame (int slot, char* description);
+
+
+// called by crlcore
+int CRL_EstimateSaveSize();
 
 // Only called by startup code.
 void G_RecordDemo (char* name);

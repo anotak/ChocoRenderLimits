@@ -20,6 +20,10 @@
 #include "m_argv.h"
 #include "tables.h"
 
+#include "g_game.h"
+
+#include "crl_defs.h"
+
 /** Backup. */
 jmp_buf CRLJustIncaseBuf;
 
@@ -144,6 +148,16 @@ CRL_Value_t CRLColorblind[] =
 	},
 };
 
+CRL_Value_t CRLSpriteClipping[] =
+{
+        {
+            "Default",
+        },
+        {
+            "None",
+        },
+};
+
 /**
  * CRL Option menu and their values.
  */
@@ -197,6 +211,13 @@ CRL_Option_t CRLOptionSet[NUM_CRL_OPTIONS] =
 		NUM_CRL_COLORBLIND,
 		CRLColorblind
 	},
+
+        {
+                "Sprites Clipping",
+                NUM_CRL_SPRITE_CLIPPING,
+                CRLSpriteClipping
+
+        },
 };
 
 /*****************************************************************************/
@@ -903,13 +924,69 @@ void CRL_StatDrawer(void (*__dt)(int, int, const char*),
 	{
 		// Visplane total
 		i = CRLData.numcheckplanes + CRLData.numfindplanes;
-		snprintf(line, MAXLINE, "VIS: %d = %d CHK + %d FND", i,
+		snprintf(line, MAXLINE, "VIS: %d / %d = %d CHK + %d FND", i,
+                        MAXVISPLANES,
 			CRLData.numcheckplanes, CRLData.numfindplanes);
 			
 		// Draw
 		__dt(x, y, line);
 		y -= __fh;
 	}
+
+    // drawsegs
+    if (1)
+    {
+        // total
+        snprintf(line, MAXLINE, "DRAWSEGS: %d / %d", CRLData.numdrawsegs, MAXDRAWSEGS);
+
+        // Draw
+        __dt(x, y, line);
+        y -= __fh;
+    }
+
+    // openings
+    if (1)
+    {
+        // total
+        snprintf(line, MAXLINE, "SOLIDSEGS: %d / %d", CRLData.numsolidsegs, MAXSEGS_OLD);
+
+        // Draw
+        __dt(x, y, line);
+        y -= __fh;
+    }
+
+    // openings
+    if (1)
+    {
+        // total
+        snprintf(line, MAXLINE, "OPENINGS: %d / %d", CRLData.numopenings, MAXOPENINGS);
+
+        // Draw
+        __dt(x, y, line);
+        y -= __fh;
+    }
+
+    // openings
+    if (1)
+    {
+        // total
+        snprintf(line, MAXLINE, "VISSPRITES: %d / %d", CRLData.numsprites, MAXVISSPRITES);
+
+        // Draw
+        __dt(x, y, line);
+        y -= __fh;
+    }
+
+    // openings
+    if (1)
+    {
+        // total
+        snprintf(line, MAXLINE, "SAVEGAME (ESTIMATE): %d / %d", CRL_EstimateSaveSize(), SAVEGAMESIZE);
+
+        // Draw
+        __dt(x, y, line);
+        y -= __fh;
+    }
 }
 
 /**
@@ -1122,6 +1199,26 @@ void CRL_CountPlane(void* __key, int __chorf, int __id)
 	// Add to global list
 	if (_numplanes < MAXCOUNTPLANES)
 		_planelist[_numplanes++] = __key;
+}
+
+void CRL_InformDrawsegs(int num)
+{
+    CRLData.numdrawsegs = num;
+}
+
+void CRL_InformOpenings(int num)
+{
+    CRLData.numopenings = num;
+}
+
+void CRL_InformSprites(int num)
+{
+    CRLData.numsprites = num;
+}
+
+void CRL_InformSolidsegs(int num)
+{
+    CRLData.numsolidsegs = num;
 }
 
 /**
