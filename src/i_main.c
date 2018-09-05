@@ -26,6 +26,12 @@
 #include "i_system.h"
 #include "m_argv.h"
 
+// ano - stole this from eternity engine:
+#ifdef _MSC_VER
+// haleyjd: we do not need SDL_main under Win32.
+#undef main
+#endif
+
 //
 // D_DoomMain()
 // Not a globally visible function, just included for source reference,

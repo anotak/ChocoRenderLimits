@@ -115,36 +115,28 @@ static int OPL_Win32_Init(unsigned int port_base)
 {
 #ifndef NO_PORT_RW
 
-    OSVERSIONINFO version_info;
-
     opl_port_base = port_base;
-
-    // Check the OS version.
-
-    memset(&version_info, 0, sizeof(version_info));
-    version_info.dwOSVersionInfoSize = sizeof(version_info);
-
-    GetVersionEx(&version_info);
 
     // On NT-based systems, we must acquire I/O port permissions
     // using the ioperm.sys driver.
 
-    if (version_info.dwPlatformId == VER_PLATFORM_WIN32_NT)
+    // ano - previously this included a check for that, but i can't get it
+    // to compile anymore bc it's deprecated, so i guess i'm breaking pre-NT
+    // support
+
+    // Install driver.
+
+    if (!IOperm_InstallDriver())
     {
-        // Install driver.
+        return 0;
+    }
 
-        if (!IOperm_InstallDriver())
-        {
-            return 0;
-        }
+    // Open port range.
 
-        // Open port range.
-
-        if (!IOperm_EnablePortRange(opl_port_base, 2, 1))
-        {
-            IOperm_UninstallDriver();
-            return 0;
-        }
+    if (!IOperm_EnablePortRange(opl_port_base, 2, 1))
+    {
+        IOperm_UninstallDriver();
+        return 0;
     }
 
     // Start callback thread

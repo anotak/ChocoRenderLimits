@@ -52,7 +52,6 @@ static int SoundThread(void *unused)
 
 static int PCSound_Win32_Init(pcsound_callback_func callback_func)
 {
-    OSVERSIONINFO osvi;
     BOOL result;
 
     // Temporarily disabled - the Windows scheduler is strange and 
@@ -60,23 +59,13 @@ static int PCSound_Win32_Init(pcsound_callback_func callback_func)
    
     return 0;
 
-    // Find the OS version
-
-    osvi.dwOSVersionInfoSize = sizeof(osvi);
-
-    result = GetVersionEx(&osvi);
-
-    if (!result)
-    {
-        return 0;
-    }
 
     // Beep() ignores its arguments on win9x, so this driver will
     // not work there.
-    if (osvi.dwPlatformId != VER_PLATFORM_WIN32_NT)
-    {
-        return 0;
-    }
+    
+    // ano - previously this included a check for that, but i can't get it
+    // to compile anymore bc it's deprecated, so i guess i'm breaking pre-NT
+    // support
 
     // Start a thread to play sound.
 

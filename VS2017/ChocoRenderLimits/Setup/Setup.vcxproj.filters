@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\setup">
+      <UniqueIdentifier>{5f380b4b-5160-4acb-af68-24bb42dd6189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\setup">
+      <UniqueIdentifier>{626244b4-5dc1-45ec-bc78-67addb08e62b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\textscreen">
+      <UniqueIdentifier>{2f1ab464-cd4b-452f-b918-185d6d72dc23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\textscreen">
+      <UniqueIdentifier>{ad842c04-9b39-4dc9-9b4c-3e1914c465f9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\d_iwad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\d_mode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\deh_str.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\doomtype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\i_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\i_timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\m_argv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\m_config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\m_controls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\m_misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net_defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net_io.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net_loop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net_packet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net_query.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net_sdl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net_structrw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\compatibility.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\display.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\execute.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\joystick.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\keyboard.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\mode.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\mouse.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\multiplayer.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\sound.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\txt_joyaxis.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\txt_joybinput.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\txt_keyinput.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\setup\txt_mouseinput.h">
+      <Filter>Header Files\setup</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\z_zone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\textscreen.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_button.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_checkbox.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_conditional.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_desktop.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_dropdown.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_fileselect.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_gui.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_inputbox.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_io.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_label.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_main.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_radiobutton.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_scrollpane.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_sdl.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_separator.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_spinctrl.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_strut.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_table.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_utf8.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_widget.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_window.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\textscreen\txt_window_action.h">
+      <Filter>Header Files\textscreen</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\setup\compatibility.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\display.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\execute.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\joystick.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\keyboard.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\mainmenu.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\mode.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\mouse.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\multiplayer.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\setup_icon.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\sound.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\txt_joyaxis.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\txt_joybinput.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\txt_keyinput.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\setup\txt_mouseinput.c">
+      <Filter>Source Files\setup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\d_iwad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\d_mode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\deh_str.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\i_main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\i_system.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\i_timer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\m_argv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\m_config.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\m_controls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\m_misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net_io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net_loop.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net_packet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net_query.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net_sdl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net_structrw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\z_native.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_button.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_checkbox.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_conditional.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_desktop.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_dropdown.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_fileselect.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_gui.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_inputbox.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_io.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_label.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_radiobutton.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_scrollpane.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_sdl.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_separator.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_spinctrl.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_strut.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_table.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_utf8.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_widget.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_window.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\textscreen\txt_window_action.c">
+      <Filter>Source Files\textscreen</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
