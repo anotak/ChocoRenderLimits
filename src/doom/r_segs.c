@@ -652,9 +652,9 @@ R_StoreWallRange
     if (segtextured)
     {
 	offsetangle = rw_normalangle-rw_angle1;
-	
+
 	if (offsetangle > ANG180)
-	    offsetangle = -offsetangle;
+	    offsetangle = 1 + (~offsetangle); // ano - was offsetangle = -offsetangle;
 
 	if (offsetangle > ANG90)
 	    offsetangle = ANG90;

@@ -310,7 +310,7 @@ R_PointToAngle
 	    if (x>y)
 	    {
 		// octant 8
-		return -tantoangle[SlopeDiv(y,x)];
+		return 1 + (~tantoangle[SlopeDiv(y,x)]); // ano - was return -tantoangle[SlopeDiv(y,x)];
 	    }
 	    else
 	    {
