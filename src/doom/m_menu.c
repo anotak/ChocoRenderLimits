@@ -1394,18 +1394,8 @@ boolean M_Responder (event_t* ev)
     // "close" button pressed on window?
     if (ev->type == ev_quit)
     {
-        // First click on close button = bring up quit confirm message.
-        // Second click on close button = confirm quit
-
-        if (menuactive && messageToPrint && messageRoutine == M_QuitResponse)
-        {
-            M_QuitResponse(key_menu_confirm);
-        }
-        else
-        {
-            S_StartSound(NULL,sfx_swtchn);
-            M_QuitDOOM(0);
-        }
+        // ano - just make alt-f4 as fast as possible
+        I_Quit();
 
         return true;
     }
