@@ -535,10 +535,21 @@ void R_Subsector (int num)
 		
     R_AddSprites (frontsector);	
 
-    while (count--)
+    if (CRLOptionSet[CRL_REVERSE_ADDLINE].curvalue & CRL_REVERSE_ADDLINE_YES)
     {
-	R_AddLine (line, sub);
-	line++;
+        while (count--)
+        {
+            R_AddLine(line, sub);
+            line++;
+        }
+    }
+    else {
+        line += count - 1;
+        while (count--)
+        {
+            R_AddLine(line, sub);
+            line--;
+        }
     }
 
     CRL_InformSolidsegs(newend - solidsegs - 1);

@@ -261,21 +261,43 @@ R_FindPlane
 	height = 0;			// all skys map together
 	lightlevel = 0;
     }
-	
-    for (check=visplanes; check<lastvisplane; check++)
+
+    if (CRLOptionSet[CRL_REVERSE_VISPLANES].curvalue & CRL_REVERSE_VISPLANES_YES)
     {
-	if (height == check->height
-	    && picnum == check->picnum
-	    && lightlevel == check->lightlevel)
-	{
-		if ((CRLOptionSet[CRL_MERGEPLANES].curvalue & CRL_MERGE_FIND) == 0)
-	    break;
-	}
+        // reverse
+        for (check = lastvisplane - 1; check >= visplanes; check--)
+        {
+            if (height == check->height
+                && picnum == check->picnum
+                && lightlevel == check->lightlevel)
+            {
+                if ((CRLOptionSet[CRL_MERGEPLANES].curvalue & CRL_MERGE_FIND) == 0)
+                    break;
+            }
+        }
+
+        if (check >= visplanes)
+            return check;
+
+        check = lastvisplane;
     }
-    
-			
-    if (check < lastvisplane)
-	return check;
+    else
+    {
+        // original
+        for (check = visplanes; check < lastvisplane; check++)
+        {
+            if (height == check->height
+                && picnum == check->picnum
+                && lightlevel == check->lightlevel)
+            {
+                if ((CRLOptionSet[CRL_MERGEPLANES].curvalue & CRL_MERGE_FIND) == 0)
+                    break;
+            }
+        }
+
+        if (check < lastvisplane)
+            return check;
+    }
 		
     if (lastvisplane - visplanes == CRL_MaxVisPlanes())
     	longjmp(CRLJustIncaseBuf, CRL_JUMP_VPO);
