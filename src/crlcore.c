@@ -158,6 +158,26 @@ CRL_Value_t CRLSpriteClipping[] =
         },
 };
 
+CRL_Value_t CRLReverseVisplanes[] =
+{
+        {
+            "No (Default)",
+        },
+        {
+            "Yes (WARNING: NOT VANILLA COMPAT)",
+        },
+};
+
+CRL_Value_t CRLReverseAddLine[] =
+{
+        {
+            "No (Default)",
+        },
+        {
+            "Yes (WARNING: NOT VANILLA COMPAT)",
+        },
+};
+
 /**
  * CRL Option menu and their values.
  */
@@ -216,7 +236,18 @@ CRL_Option_t CRLOptionSet[NUM_CRL_OPTIONS] =
                 "Sprites Clipping",
                 NUM_CRL_SPRITE_CLIPPING,
                 CRLSpriteClipping
+        },
 
+        {
+                "reverse visplanes (DONT USE)",
+                NUM_CRL_REVERSE_VISPLANES,
+                CRLReverseVisplanes
+        },
+
+        {
+            "reverse addline (DONT USE)",
+            NUM_CRL_REVERSE_ADDLINE,
+            CRLReverseAddLine
         },
 };
 
