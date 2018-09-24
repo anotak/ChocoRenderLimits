@@ -410,7 +410,10 @@ void P_LoadLineDefs (int lump)
     lines = Z_Malloc (numlines*sizeof(line_t),PU_LEVEL,0);	
     memset (lines, 0, numlines*sizeof(line_t));
     data = W_CacheLumpNum (lump,PU_STATIC);
-	
+
+    // Reset the "warned about a Medusa error for this map" state
+    R_LineMedusaCheck(0, NULL);
+
     mld = (maplinedef_t *)data;
     ld = lines;
     for (i=0 ; i<numlines ; i++, mld++, ld++)
@@ -469,6 +472,8 @@ void P_LoadLineDefs (int lump)
 	    ld->backsector = sides[ld->sidenum[1]].sector;
 	else
 	    ld->backsector = 0;
+
+   R_LineMedusaCheck(i, ld);
     }
 
     W_ReleaseLumpNum(lump);

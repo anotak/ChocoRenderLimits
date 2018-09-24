@@ -907,6 +907,46 @@ void R_PrecacheLevel (void)
     Z_Free(spritepresent);
 }
 
+//
+// R_LineMedusaCheck
+// Checks if a specified line can cause Medusa errors
+// If called with parameters == 0 and NULL then it resets warned
+//
+void R_LineMedusaCheck(int i, line_t *ld)
+{
+    static boolean warned = false;
+
+    if(i == 0 && ld == NULL)
+    {
+        warned = false;
+        return;
+    }
+
+    if(ld->sidenum[0] > 0 && ld->sidenum[1] > 0)
+    {
+        texture_t *fronttex = textures[sides[ld->sidenum[0]].midtexture];
+        texture_t *backtex =  textures[sides[ld->sidenum[1]].midtexture];
+
+        if(warned == false && fronttex->patchcount > 1 || backtex->patchcount > 1)
+        {
+            puts("R_LineMedusaCheck: At least one two-sided line uses a "
+                 "multipatch midtexture.\nThis can cause game-crashing Medusa "
+                 "effects: https://doomwiki.org/wiki/Medusa_effect");
+            warned = true;
+        }
+        if(fronttex->patchcount > 1)
+        {
+            printf("Warning: Line %d's front side has a multipatch midtexture: %s\n",
+                   i, fronttex->name);
+        }
+        if(backtex->patchcount > 1)
+        {
+            printf("Warning: Line %d's back side has a multipatch midtexture: %s\n",
+                   i, backtex->name);
+        }
+    }
+}
+
 
 
 

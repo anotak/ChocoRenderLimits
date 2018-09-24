@@ -48,4 +48,7 @@ int R_FlatNumForName (char* name);
 int R_TextureNumForName (char *name);
 int R_CheckTextureNumForName (char *name);
 
+// Error checking
+void R_LineMedusaCheck(int i, line_t *ld);
+
 #endif
